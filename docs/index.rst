@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to CateROS's documentation!
+Welcome to CateROS' documentation!
 ===================================
 
 Contents:
@@ -13,6 +13,7 @@ Contents:
    :caption: Tutorials
    
    installation
+   pullreqguide
 
 
 

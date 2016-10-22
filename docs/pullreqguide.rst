@@ -1,6 +1,6 @@
-###############################
-Guide: Pull-Requests mit Github
-###############################
+########################
+Pull-Requests mit Github
+########################
 
 Achtung: Falls du deinen Workspace (mit den Repos aller Teilgruppen) noch nicht eingerichtet haben solltest, erledige dies zuerst.
 
