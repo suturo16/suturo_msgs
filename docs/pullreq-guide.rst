@@ -24,7 +24,7 @@ möchtest ein neues Feature entwickeln.
      git commit -m "commitMsg"
 
    Wenn du pushen möchtest, achte darauf, auf deinen branch zu pushen::
-   
+
      git push -u origin deinBranchName
 
 3. Auf https://github.com/ kannst du nun in das Manipulations-Repository 
@@ -32,11 +32,11 @@ möchtest ein neues Feature entwickeln.
    jemand deinen branch reviewed und approved hat, wird er mit dem Master-branch
    gemerged und dein erstellter Branch gelöscht.
 
-4. Du kannst nun zum Master-branch zurückwechseln::
+4. Nun wechselst du zum Master-branch zurück::
      
      git checkout master 
 
-   und dort normal pullen::
+   und kannst dort normal pullen::
    
      git pull
 
