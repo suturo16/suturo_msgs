@@ -10,11 +10,34 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Tutorials
+   :caption: Tutorials & Tools
    
-   installation
-   pullreqguide
-   tutorial/neue_artikel_schreiben
+   tutorials/neue_artikel_schreiben
+   tutorials/installation
+   tutorials/pull-requests_mit_github
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Planning-Tutorials
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Perception-Tutorials
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Knowledge-Tutorials
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Manipulation-Tutorials
+
 
 
 
