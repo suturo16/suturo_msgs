@@ -14,6 +14,7 @@ Contents:
    
    installation
    pullreqguide
+   tutorial/neue_artikel_schreiben
 
 
 
