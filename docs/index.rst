@@ -10,6 +10,12 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Organisation
+
+
+
+.. toctree::
+   :maxdepth: 2
    :caption: Tutorials & Tools
    
    tutorials/neue_artikel_schreiben
@@ -37,6 +43,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :caption: Manipulation-Tutorials
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Implementierung
 
 
 
