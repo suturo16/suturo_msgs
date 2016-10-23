@@ -38,7 +38,10 @@ Contents:
    :maxdepth: 2
    :caption: Knowledge-Tutorials
 
-
+   tutorials/knowledge/rosjavaEclipse.rst
+   tutorials/knowledge/rosjavaTroubleshooting.rst
+   tutorials/knowledge/jplTrouble.rst
+   tutorials/knowledge/rosprologWorkflow.rst
 
 .. toctree::
    :maxdepth: 2
