@@ -24,4 +24,3 @@ rosjava - Projekt in Eclipse importieren
             iii. EUER_PROJEKT --> build --> install --> EUER_PROJEKT --> lib
             
             iv. Sucht die entsprechende .jar (die .jar's haben meist einen Namen der Form: EUER_ZIEL-1.4.0.jar)
-
