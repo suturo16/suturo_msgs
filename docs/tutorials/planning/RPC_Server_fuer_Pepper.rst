@@ -25,7 +25,7 @@ For this you only need to know the IP address of the computer running the RPC Se
 2. Your Python script will need to import the xmlrpclib.
 
 3. Connect to the server by using:
-     ``server = xmlrpc.Server('http:// >>IP ADDRESS FROM SERVER<< :7080/')``
+     ``server = xmlrpclib.Server('http:// >>IP ADDRESS FROM SERVER<< :7080/')``
      
    Without the spaces, the port stays the same.
      
