@@ -26,7 +26,9 @@ Contents:
    :maxdepth: 2
    :caption: Planning-Tutorials
 
-
+   tutorials/planning/umgebung_einrichten
+   tutorials/planning/troubleshooting_planning
+   tutorials/planning/rpc_server_fuer_pepper
 
 .. toctree::
    :maxdepth: 2
