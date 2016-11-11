@@ -11,7 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :caption: Organisation
-
+   
+   organisation/git_struktur
 
 
 .. toctree::
@@ -21,6 +22,7 @@ Contents:
    tutorials/neue_artikel_schreiben
    tutorials/installation
    tutorials/pull-requests_mit_github
+   tutorials/travis_ci
 
 .. toctree::
    :maxdepth: 2
