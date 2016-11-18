@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# CateROS documentation build configuration file, created by
+# CaterROS documentation build configuration file, created by
 # sphinx-quickstart on Sat Oct 22 13:34:24 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'CateROS'
+project = u'CaterROS'
 copyright = u'2016, SUTURO'
 author = u'SUTURO'
 
@@ -134,7 +134,7 @@ todo_include_todos = False
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = u'CateROS v0.1'
+# html_title = u'CaterROS v0.1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -234,7 +234,7 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CateROSdoc'
+htmlhelp_basename = 'CaterROSdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -260,7 +260,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'CateROS.tex', u'CateROS Documentation',
+    (master_doc, 'CaterROS.tex', u'CaterROS Documentation',
      u'SUTURO', 'manual'),
 ]
 
@@ -302,7 +302,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'cateros', u'CateROS Documentation',
+    (master_doc, 'caterros', u'CaterROS Documentation',
      [author], 1)
 ]
 
@@ -317,8 +317,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'CateROS', u'CateROS Documentation',
-     author, 'CateROS', 'One line description of project.',
+    (master_doc, 'CaterROS', u'CaterROS Documentation',
+     author, 'CaterROS', 'One line description of project.',
      'Miscellaneous'),
 ]
 
