@@ -2,6 +2,7 @@ string nameOfAction
 int parentActionID
 time startTime
 time endTime
+string parameters
 ---
 int actionID
 
