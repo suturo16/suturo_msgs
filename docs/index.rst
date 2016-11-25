@@ -26,6 +26,8 @@ Contents:
    :maxdepth: 2
    :caption: Planning-Tutorials
 
+   tutorials/planning/RPC_Server_fuer_Pepper.rst
+
 
 
 .. toctree::
