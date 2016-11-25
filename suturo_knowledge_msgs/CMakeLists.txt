@@ -7,7 +7,10 @@ project(suturo_knowledge_msgs)
 find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   geometry_msgs
+  roscpp
+  rospy
   std_msgs
+  #message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -102,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES suturo_knowledge_msgs
-#  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs
+#  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs roscpp rospy message_runtime
 #  DEPENDS system_lib
 )
 
