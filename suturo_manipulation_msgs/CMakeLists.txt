@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(planning_lib)
+project(suturo_manipulation_msgs)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -8,6 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   geometry_msgs
   std_msgs
+  diagnostic_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -58,17 +60,19 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
+ add_action_files(
+   FILES
+   GeneralAction.action
+ )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   actionlib_msgs#   geometry_msgs#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   actionlib_msgs   
+   geometry_msgs   
+   std_msgs
+   diagnostic_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -101,8 +105,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES planning_lib
-#  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs
+#  LIBRARIES suturo_manipulation_msgs
+  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs diagnostic_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -118,24 +122,24 @@ include_directories(
 )
 
 ## Declare a C++ library
-# add_library(planning_lib
-#   src/${PROJECT_NAME}/planning_lib.cpp
+# add_library(suturo_manipulation_msgs
+#   src/${PROJECT_NAME}/suturo_manipulation_msgs.cpp
 # )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(planning_lib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(suturo_manipulation_msgs ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(planning_lib_node src/planning_lib_node.cpp)
+# add_executable(suturo_manipulation_msgs_node src/suturo_manipulation_msgs_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(planning_lib_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(suturo_manipulation_msgs_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(planning_lib_node
+# target_link_libraries(suturo_manipulation_msgs_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -154,7 +158,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS planning_lib planning_lib_node
+# install(TARGETS suturo_manipulation_msgs suturo_manipulation_msgs_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -179,7 +183,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_planning_lib.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_suturo_manipulation_msgs.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

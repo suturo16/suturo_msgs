@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(manipulation_lib)
+project(suturo_perception_msgs)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -8,7 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   geometry_msgs
   std_msgs
-  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -45,17 +44,18 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-	FILES
-	Arms.msg
-	Status.msg
-)
+# add_message_files(
+#   FILES
+#   Message1.msg
+#   Message2.msg
+# )
 
 ## Generate services in the 'srv' folder
-add_service_files(
-	FILES
-	MoveToBasePose.srv
-)
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -65,13 +65,10 @@ add_service_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-   DEPENDENCIES
-   actionlib_msgs   
-   geometry_msgs   
-   std_msgs
-   manipulation_lib
-)
+# generate_messages(
+#   DEPENDENCIES
+#   actionlib_msgs#   geometry_msgs#   std_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -104,8 +101,8 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES manipulation_lib
-  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs message_runtime
+#  LIBRARIES suturo_perception_msgs
+#  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs
 #  DEPENDS system_lib
 )
 
@@ -121,24 +118,24 @@ include_directories(
 )
 
 ## Declare a C++ library
-# add_library(manipulation_lib
-#   src/${PROJECT_NAME}/manipulation_lib.cpp
+# add_library(suturo_perception_msgs
+#   src/${PROJECT_NAME}/suturo_perception_msgs.cpp
 # )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(manipulation_lib ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(suturo_perception_msgs ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(manipulation_lib_node src/manipulation_lib_node.cpp)
+# add_executable(suturo_perception_msgs_node src/suturo_perception_msgs_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(manipulation_lib_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(suturo_perception_msgs_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(manipulation_lib_node
+# target_link_libraries(suturo_perception_msgs_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -157,7 +154,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS manipulation_lib manipulation_lib_node
+# install(TARGETS suturo_perception_msgs suturo_perception_msgs_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -182,7 +179,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_manipulation_lib.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_suturo_perception_msgs.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
