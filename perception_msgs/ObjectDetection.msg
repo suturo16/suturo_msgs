@@ -3,6 +3,7 @@ uint8 BOX=1
 uint8 CYLINDER=2
 uint8 SPHERE=3
 uint8 CONE=4
+uint8 DROPZONE=5
 
 string name
 geometry_msgs/PoseStamped pose
