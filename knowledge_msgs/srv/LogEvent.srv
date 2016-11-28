@@ -1,0 +1,11 @@
+uint8 NOPARENT = 0
+
+string nameOfAction
+uint8 parentActionID
+time startTime
+time endTime
+string[] parameters
+bool success
+---
+uint8 actionID
+

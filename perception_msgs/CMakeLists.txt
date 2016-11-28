@@ -8,26 +8,28 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
   message_generation
 )
 
 ## Generate messages in the 'msg' folder
-#add_message_files(
-#  FILES
-#  GripPose.msg
-#)
+add_message_files(
+  FILES
+  ObjectDetection.msg
+)
 
 ## Generate services in the 'srv' folder
 #add_service_files(
 #  FILES
-#  Classify.srv
+#  ObjectDetection.srv
 #)
 
 ## Generate added messages and services with any dependencies listed here
-#generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-#)
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+   geometry_msgs
+)
 
 ###################################
 ## catkin specific configuration ##
