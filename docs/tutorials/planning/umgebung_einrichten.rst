@@ -8,9 +8,9 @@ Um Planning auszuführen benutzen wir die roslisp_repl, welche auf emacs aufsetz
 
 Installation::
 
-sudo apt-get install ros-indigo-roslisp-repl
+    sudo apt-get install ros-indigo-roslisp-repl
 
 Starten lässt sie sich dann über den Befehl::
 
-roslisp_repl
+    roslisp_repl
 
