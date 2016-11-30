@@ -1,19 +1,19 @@
 
 
 rosjava Troubleshooting
-=================================================
+=======================
 
 Beim Umgang mit rosjava kann es zu verschiedenen Problemen kommen. Hier ein paar Lösungsvorschläge zu verschiedenen Situationen:
 
 Probleme bei catkin_make
-------------------
+------------------------
 
     1. Unter Umständen müsst ihr auch rosjava sourcen (mit den üblichen Befehl: source /PATHTO/rosjava/devel/setup.bash). Tipp: Wenn ihr dies öfters machen müsst lohnt es sich dies in die .bashrc zu speichern.
     
     2. Achtet darauf in euren Packages "message_generation" als build_depend in jedem Package zu haben! Dies gilt selbst dann, wenn diese keine Messages oder Services generieren sollen.
 
 Bauen eines eigenen rosjave - Packages
-------------------
+--------------------------------------
 
     1. Zum erstellen eines rosjava - Package benutzt den Befehl catkin_create_rosjava_pkg
     
@@ -34,7 +34,7 @@ Bauen eines eigenen rosjave - Packages
         c. Außerdem müssen in den build.gradle vom Ordner mit dem Java - Code die Zeile "compile project(...)" hinzufügen.
 
 rosjava - Package builded nicht 
-------------------
+-------------------------------
 
     1. Zum erstellen eines rosjava - Package benutzt den Befehl catkin_create_rosjava_pkg
     

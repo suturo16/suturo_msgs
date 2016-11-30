@@ -1,11 +1,11 @@
 
 rosjava Eclipse
-=================================================
+===============
 
 Dies ist bisher nur eine vorläufige Empfehlung. Sie ist noch nicht dazu gedacht aus Eclipse zu starten oder ernsthaft zu kompilieren. 
 
 rosjava - Projekt in Eclipse importieren
-------------------
+----------------------------------------
 
     1. Führe einmal catkin_make aus.
     

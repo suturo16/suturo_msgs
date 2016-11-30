@@ -11,7 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :caption: Organisation
-
+   
+   organisation/git_struktur
 
 
 .. toctree::
@@ -21,12 +22,15 @@ Contents:
    tutorials/neue_artikel_schreiben
    tutorials/installation
    tutorials/pull-requests_mit_github
+   tutorials/travis_ci
 
 .. toctree::
    :maxdepth: 2
    :caption: Planning-Tutorials
 
-
+   tutorials/planning/umgebung_einrichten
+   tutorials/planning/troubleshooting_planning
+   tutorials/planning/rpc_server_fuer_pepper
 
 .. toctree::
    :maxdepth: 2
@@ -38,10 +42,10 @@ Contents:
    :maxdepth: 2
    :caption: Knowledge-Tutorials
 
-   tutorials/knowledge/rosjavaEclipse.rst
-   tutorials/knowledge/rosjavaTroubleshooting.rst
-   tutorials/knowledge/jplTrouble.rst
-   tutorials/knowledge/rosprologWorkflow.rst
+   tutorials/knowledge/rosjava_eclipse
+   tutorials/knowledge/rosjava_troubleshooting
+   tutorials/knowledge/jpl_troubleshooting
+   tutorials/knowledge/rosprolog_workflow
 
 .. toctree::
    :maxdepth: 2

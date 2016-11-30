@@ -1,6 +1,6 @@
 
-jpl Trouble
-=================================================
+jpl Troubleshooting
+===================
 
 Hier werden zu verschiedenen Fehlermeldungen die Lösungsmöglichkeit beschrieben.
 

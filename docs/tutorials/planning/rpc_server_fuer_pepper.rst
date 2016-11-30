@@ -1,5 +1,5 @@
-Tutorial: Using the RPC Server Node for communication with Pepper
-=================================================================
+Using the RPC Server Node for communication with Pepper
+=======================================================
 
 Here you will learn to use RPC (Remote Procedure Calls) to send messages from Pepper to CaterROS. Look at the documentation for RPC Server in Planning to see which methods are available(not yet there).
 
@@ -7,7 +7,7 @@ Here you will learn to use RPC (Remote Procedure Calls) to send messages from Pe
 
 
 Setting up
------------
+----------
 
 The process is composed of two parts, you will need to write a code in Pepper which allows her to send information via XML-RPC and of course setting up the Server on a ROS-Node.
 

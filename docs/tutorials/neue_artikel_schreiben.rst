@@ -11,7 +11,7 @@ Darin gibt es die drei Unterverzeichnisse *organisation*, *tutorials* und *imple
 
 In dieser Datei schreibt ihr dann mit einem Editor eures Vertrauens *reStructuredText*. Das ist eine Markup-Sprache, die relativ einfach ist um simple Texte zu schreiben, aber auch mächtig genug um halbwegs schöne Artikel zu produzieren.
 
-.. note:: Eine relativ gute Übersicht über reSt gibt's `hier <http://www.sphinx-doc.org/en/stable/rest.html#tables>`_. Man kann sich natürlich auch immer die anderen Source-Dateien angucken um sich Inspiration zu holen. Dafür gibt es auch den "Edit on GitHub" Button oben rechts.
+.. note:: Eine relativ gute Übersicht über reSt gibt's `hier <http://www.sphinx-doc.org/en/stable/rest.html>`_. Man kann sich natürlich auch immer die anderen Source-Dateien angucken um sich Inspiration zu holen. Dafür gibt es auch den "Edit on GitHub" Button oben rechts.
 
 Damit der Artikel im Inhaltsverzecihnis auftaucht, muss er in der *index.rst* noch in der entsprechenden toctree-Direktive aufgelistet werden. Zum Beispiel::
 
@@ -41,7 +41,7 @@ Sphinx installieren
 
     pip install sphinx
 
-3. Oder man schaut `hier <http://www.sphinx-doc.org/en/stable/install.html>`_.
+3. Oder man schaut auf der Seite von `sphinx <http://www.sphinx-doc.org/en/stable/install.html>`_.
 
 
 Doku bauen
