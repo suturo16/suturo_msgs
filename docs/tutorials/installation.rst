@@ -173,3 +173,78 @@ d. Lisp über Emacs
 
     sudo apt-get install ros-indigo-roslisp-repl
 
+Knowrob installieren
+""""""""""""""""""""
+
+Erstelle einen neuen catkin workspace ::
+
+		mkdir -p ~/<wsname>/src
+
+Prüfe maven deployment path ::
+
+		echo $ROS_MAVEN_DEPLOYMENT_REPOSITORY
+
+Sicherstellen, dass der path leer ist ::
+
+		export ROS_MAVEN_DEPLOYMENT_REPOSITORY=""
+
+Aktualisiere dependencies ::
+
+		rosdep update
+
+In den neuen workspace und wstool directory aufsetzen ::
+
+		cd ~/<wsname>/src
+		wstool init
+		wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
+
+.rosinstall um iai-common-msgs erweitern. ::
+
+		gedit .rosinstall
+
+Das entsprechende Repo, also diesen Text, in die .rosinstall kopieren ::
+
+		- git:
+   			local-name: iai_common_msgs
+   			uri: https://github.com/code-iai/iai_common_msgs.git
+
+Pakete ziehen ::
+
+		wstool update
+
+Rosdep Dependencies bauen ::
+
+		rosdep install --ignore-src --from-paths stacks/
+
+Knowrob bauen ::
+
+		cd ..
+		catkin_make
+
+Knowrob sourcen ::
+
+		source devel/setup.bash
+
+Am besten danach im SUTURO Workspace den build und devel Ordner löschen und neu bauen, damit sie setup.bash vom SUTURO Workspace auch die knowrob source enthält.
+
+**Troubleshooting**
+
+* Falls knowrob_vis das Symbol setTop() nicht findet, Gradle build löschen und neu bauen. ::
+
+		cd ~/<wsname>/src/stacks/knowrob/knowrob_vis
+		./gradlew clean
+		cd ~/<wsname>
+		catkin_make
+
+* Maven Dependency beim bauen reparieren
+   *  Bei einem Error im Build suchen, wohin die vorher gebauten Pakete per Maven kopiert wurden.
+   *  Ist dort nicht der aktuelle Workspace angegeben steht in ROS_MAVEN_DEPLOYMENT_REPOSITORY wahrscheinlich der Path, in den fälschlicherweise kopiert wurde. ::
+
+   			echo $ROS_MAVEN_DEPLOYMENT_REPOSITORY
+
+   *  Die Variable ROS_MAVEN_DEPLOYMENT_REPOSITORY muss geleert werden ::
+
+			export ROS_MAVEN_DEPLOYMENT_REPOSITORY=""
+
+   *  ROS_MAVEN_DEPLOYMENT_REPOSITORY ist jetzt nur in der aktuellen Terminal-Session leer. In dem aktuellen Terminal sollte dann nochmal versucht werden zu bauen. Da Knowrob eigentlich nur ein mal gebaut werden muss reicht das. Wenn man aber Knowrob regelmäßig bauen möchte sollte man herausfinden ob es wichtig ist, dass in ROS_MAVEN_DEPLOYMENT_REPOSITORY der Path steht, den wir gerade gelöscht haben.
+
