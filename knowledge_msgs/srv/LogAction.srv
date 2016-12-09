@@ -1,8 +1,9 @@
 string nameOfAction
-int parentActionID
-time startTime
-time endTime
+uint32 parentActionID
+std_msgs/Time startTime
+std_msgs/Time endTime
 string parameters
+bool success
 ---
-int actionID
+uint32 actionID
 
