@@ -1,0 +1,15 @@
+# Define the goal
+string[] controlled_joints 			#All the joints to use for this action
+string controller_yaml 				#The complete content of the generated controller yaml
+#Params for the action like:
+#"frame: cylinder"
+#"width: 0.06"
+#"height: 0.2"
+diagnostic_msgs/KeyValue[] params
+---
+# Define the result
+uint32 reason_for_termination
+---
+# Define a feedback message
+float64 current_value
+float64 alteration_rate
