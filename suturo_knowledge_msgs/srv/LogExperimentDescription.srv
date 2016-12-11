@@ -1,0 +1,10 @@
+string DEFAULT='' #Empty String to use default
+
+string creator
+string description
+string experiment
+string experimentName
+string robot
+---
+bool success
+
