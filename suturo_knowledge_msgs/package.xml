@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>knowledge_msgs</name>
+  <name>suturo_knowledge_msgs</name>
   <version>0.1.0</version>
   <description>The knowledge package</description>
 
