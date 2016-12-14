@@ -8,7 +8,7 @@ Was ist 'object_state'?
 -----------------------
 Das Package stellt einen listener für das Perception-Topic 'percepteros/object_detection' bereit und hört es ab. Die Informationen aus dem Perception-Topic werden dann weiterverarbeitet, indem eine KnowRob-Repräsentation erzeugt wird. Mittels dieser können wir dann Wissen inferieren.
 
-Das Package enthält 
+Das Package enthält:
 
 * eine Prolog-Klasse 'object_state.pl' um die KnowRob-Funktionalitäten bereitzustellen
 * einen Subscriber für 'percepteros/object_detection' namens 'Listener.java'
