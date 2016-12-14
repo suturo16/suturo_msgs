@@ -21,7 +21,7 @@ Contents:
    
    tutorials/neue_artikel_schreiben
    tutorials/installation
-   tutorials/pull-requests_mit_github
+   tutorials/pullreq_git
    tutorials/travis_ci
 
 .. toctree::
@@ -41,7 +41,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :caption: Knowledge-Tutorials
-
+   
+   tutorials/knowledge/object_state_walkthrough
    tutorials/knowledge/rosjava_eclipse
    tutorials/knowledge/rosjava_troubleshooting
    tutorials/knowledge/jpl_troubleshooting
