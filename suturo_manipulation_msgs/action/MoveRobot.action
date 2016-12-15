@@ -9,7 +9,14 @@ suturo_manipulation_msgs/TypedParam[] params
 #"height: 0.2"
 ---
 # Define the result
-uint32 reason_for_termination
+uint8 PREEMPTED=0
+uint8 INFEASIBLE_GOAL=1
+uint8 TERMINATED=2
+uint8 INVALID_DATATYPE=3
+uint8 DEFECT_YAML=4
+uint8 DEFECT_CONTROLLER=5
+uint8 INVALID_FEEDBACK=6
+uint8 reason_for_termination
 ---
 # Define a feedback message
 float64 current_value
