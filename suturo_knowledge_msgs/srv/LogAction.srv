@@ -1,0 +1,9 @@
+string nameOfAction
+uint32 parentActionID
+std_msgs/Time startTime
+std_msgs/Time endTime
+string parameters
+bool success
+---
+uint32 actionID
+
