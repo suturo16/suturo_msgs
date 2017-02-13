@@ -1,25 +1,31 @@
 
-Verwendung des object_state pkg
-===============================
+Package object_state 
+-------------------------------
 
 Es folgt eine kurze Einleitung in das Package 'object_state'.
 
 Was ist 'object_state'?
 -----------------------
+MS1:
 Das Package stellt einen listener für das Perception-Topic 'percepteros/object_detection' bereit und hört es ab. Die Informationen aus dem Perception-Topic werden dann weiterverarbeitet, indem eine KnowRob-Repräsentation erzeugt wird. Mittels dieser können wir dann Wissen inferieren.
+
+MS2:
+Das Package stellt nun weitere Funktionalitäten bereit. Es können beispielsweise die Position und Orientierung von gültigen Fluent-Objekten über ein Pythonskript auf das tf topic gepublished werden.
 
 Das Package enthält:
 
-* eine Prolog-Klasse 'object_state.pl' um die KnowRob-Funktionalitäten bereitzustellen
-* einen Subscriber für 'percepteros/object_detection' namens 'Listener.java'
-* einen Subscriber für 'percepteros/object_detection' namens 'subscriber.py'
+* eine Prolog-Klasse 'prolog_object_state.pl' um die KnowRob-internen Objekte zu erzeugen
+* einen Subscriber für 'percepteros/object_detection' namens 'Listener.java' (Fehlerhaft, Stand 2/2017)
+* einen Subscriber für 'percepteros/object_detection' namens 'subscriber.py' 
 * Launchfiles für je einen Subscriber, die Prolog-Klasse sowie für alle zur Ausführung nötigen Komponenten zusammen, erkennbar am Dateinamen
+
+* einen Python-Broadcaster namens "fluents_tf_publisher.py"  
 
 .. note:: Vorerst solltet ihr nur den Python-Subscriber benutzen, da der Java-Subscriber noch fehlerhaft ist. Wenn ihr 'object_state.launch' ausführt wird standartmäßig der Python-Subscriber gestartet.
 
 
-Verwendung und Testlauf
------------------------
+Verwendung und Testlauf des Subscribers "subscriber.py" und der KnowRob-internen Objektrepräsentation
+------------------------------------------------------------------------------------------------------
 
 .. note:: Öffnet eine Kommandozeile à la Terminator und teilt sie in 4 Shells auf, da es sonst extrem unübersichtlich wird. Im weiteren sind die unterschiedlichen Terminals mit t1(oben links), t2(oben rechts), t3(unten links) und t4(unten rechts) benannt.
 
@@ -130,5 +136,74 @@ Nun brauchen wir, wie zuvor auch schon, den zweiten Prolog-Call um die Lösung d
 	status: 3
 	solution: {"Height":5,"Depth":88,"Frame":"odom_combined","Width":7}
 
-Vielen Dank für die Aufmerksamkeit und Happy Coding, 
-Luke :D
+
+Verwendung und Test des TF Broadcasters
+----------------------------------------
+
+Für die Erweiterung des Packages 'object_state' wurde die Prolog-Klasse 'prolog_object_state.pl' erweitert. Außerdem wurde 'fluents_tf_broadcaster.py' als neues Pythonskript implementiert.
+Ziel dieser Erweiterungen war, die Position und Orientierung aus offenen Fluent-Objekten an das tf-topic zu publishen.
+
+Umsetzung, Verwendung und Test der neuen Funktionalität wird hier Schritt für Schritt dokumentiert.
+
+Zunächst öffnen wir auf einem freien Workspace vier Shells. Dabei stehen im Folgenden die Abkürzungen T1-T4 für die vier Shells, wobei die Zuordnung wie folgt aussieht: T1 oben links, T2 oben rechts, T3 unten links, T4 unten rechts.
+
+#1. Schritt
+Wir beginnen damit, das Prolog-Modul des 'object_state'-Packages zu starten (ROS-Core wird automatisch mitgestartet).
+
+	roslaunch object_state object_state_prolog.launch
+	
+Als nächstes nutzen wir den Service /json_prolog/simple_query um mittels der in Prolog implementierten Dummy-Methoden echte Objektwahrnehmungen zu simulieren. Dazu kopieren wir das Folgende Kommando in T2 und lösen mittels doppeltem Drücken der TAB-Taste die automatische Vervollständigung aus.
+(Als Parameter übergeben wir irgeneinen Namen, z.B. "`baum"' sowie eine beliebige ID):
+	
+	rosservice call /json_prolog/simple_query
+
+Der vollständige Aufruf sieht dann etwa so aus:
+
+	rosservice call /json_prolog/simple_query "mode: 0
+	id: '1'
+	query: 'dummy_perception(baum)'" 
+
+Dieses Kommando ruft die Prolog-Funktion dummy_perception(Name) auf, welche die die KnowRob-interne Repräsentation für Objekte erzeugt.
+
+Jetzt kopieren wir (wieder per doppel TAB vervollständigen) in T2::
+
+	rosservice call /json_prolog/next_solution
+
+In dem erzeugten Aufruftemplate setzen wir die Id auf den selben Wert wie im vorherigen Kommando. Durch den Aufruf von next_solution wird die zuvor gestellte Query ausgeführt und wir erhalten eine Lösung, wenn es eine gibt.
+
+Da wir die Query sauber schließen wollen, um die verwendete ID wieder verwendbar zu machen führen wir noch folgendes in T2 aus::
+
+	rosservice call /json_prolog/finish "id: '1'"
+
+
+Wir starten jetzt in T3 den TF-Broadcaster, indem wir mit folgendem Kommando das Pythonskript fluent_tf_publisher.py ausführen.::
+
+	rosrun object_state fluents_tf_publisher.py
+
+Auf der Konsole sollte sofort ersichtlich sein, dass der Publisher anfängt zu arbeiten. Die Textausgabe dient nur zur Information und wird vermutlich noch häufiger angepasst.
+
+Jetzt wollen wir überprüfen, was auf dem TF-Topic ankommt, dazu wechseln wir zu T4 und führen folgendes Kommando aus, um wiederzugeben, was im TF-Topic gepublished wird.::
+
+	rostopic echo /tf
+
+Wir sehen jetzt, dass mit hoher Frequenz die von der Dummy-Funktion erzeugten Werte gepublished werden. Soweit sogut. Wir verwenden jetzt zwei weitere Dummy-Funktionen, um zu überprüfen, wie sich die gepublishten Werte aktualisieren, wenn die Fluents "`updaten"'. Dazu führen wir in T2 folgendes aus::
+
+	rosservice call /json_prolog/simple_query "mode: 0
+	id: '2'
+	query: 'dummy_perception_with_close(baum)'" 
+
+Meistens ist es einfacher, den beginn des Kommandos in die Konsole zu schreiben und mittels doppel-TAB das Kommando vervollständigen zu lassen. Die Werte könnt ihr dann so setzen wie oben zu sehen ist.
+
+Danach führen wir wieder:: 
+
+	rosservice call /json_prolog/next_solution "id: '2'" 
+
+aus, um die Lösung zu generieren. In T4 können wir nun live beobachten, wie sich die Werte verändern. Somit haben wir erfolgreich die Veränderung von Fluent-Werten (Position, Orientierung) an das TF-Topic übertragen. Hier können sie jetzt für viele andere Aufgaben ausgelesen und weiterverwendet werden.
+
+Der Vollständigkeit halber, sollte nun noch das Query in T2 geschlossen werden.::
+
+	rosservice call /json_prolog/finish "id: '2'" 
+
+
+Bei Fragen oder Problemen, schreibt mich direkt an.
+Lukas S.
