@@ -1,4 +1,4 @@
-string DEFAULT='' #Empty String to use default
+string DEFAULT="" #Empty String to use default
 
 string creator
 string description
