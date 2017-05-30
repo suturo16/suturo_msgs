@@ -1,0 +1,5 @@
+string actor
+string patient
+string action
+bool actionFinished
+---
