@@ -13,3 +13,5 @@ uint32 SPHERE=3
 uint32 CONE=4
 uint32 DROPZONE=5
 uint32 KNIFE=6
+uint32 PLATE=7
+uint32 SPATULA=8
