@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    ObjectDetection.msg
+   CollisionObject.msg
+   CollisionObjects.msg
  )
 
 ## Generate services in the 'srv' folder
