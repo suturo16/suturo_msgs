@@ -15,3 +15,4 @@ uint32 DROPZONE=5
 uint32 KNIFE=6
 uint32 PLATE=7
 uint32 SPATULA=8
+uint32 BOARD=9
